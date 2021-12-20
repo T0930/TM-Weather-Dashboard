@@ -23,5 +23,14 @@ function getWeather(cityName) {
         })
         .then(function (data) {
             console.log(data);
+            var today= 'new date'()
+            var lat = data.coord.lat
+            var lon = data.coord.lon
+            var forcast = `<div class="city">${cityName}</div>
+            <div class="day">Date ${today}</div>
+            <div class="temp">Temp - ${data.main.temp}; F</div>
+            <div class="wind">Wind - ${data.wind.speed}</div>
+            <div class="humidity">Humidity - ${data.main.humidity}</div>`
+            document.getElementById('currentDay').innerHTML=forcast;
         })
 };
