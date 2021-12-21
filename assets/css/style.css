@@ -58,10 +58,22 @@ h2 {
     /* overflow-y: hidden; */
 }
 
+.uvIndexGood {
+    background-color: chartreuse;
+}
+
+.uvIndexOk {
+    background-color: yellow;
+}
+
+.uvIndexBad {
+    background-color: red;
+}
+
 .weather-day{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     justify-content: center;
     margin: 0 10px;
     border: 1px solid #eee;
