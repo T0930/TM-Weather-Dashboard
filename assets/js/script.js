@@ -6,16 +6,15 @@ var storageOutput = document.getElementById('lsOutput');
 var searchData = JSON.parse(localStorage.getItem("location")) || []
 var htext = `<h3>Previous Search</h3><select name="city" id="city">`
 
-{/* <option value="volvo">Volvo</option>
-<option value="saab">Saab</option>
-<option value="mercedes">Mercedes</option>
-<option value="audi">Audi</option>
-</select>` */}
 for (let i = 0; i < searchData.length; i++) {
     htext += `<option value="${searchData[i]}">${searchData[i]}</option>`
 }
     htext += `</select>`
     storageOutput.innerHTML = htext
+    city.addEventListener('change', function(){
+        var cityName = document.getElementById('city').value
+        getWeather(cityName);
+    })
 }
 
 
@@ -45,8 +44,6 @@ $(document).ready(function () {
     update();
     setInterval(update, 1000);
 });
-// var url = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + APIkey;
-
 
 
 function getWeather(cityName) {
@@ -58,21 +55,12 @@ function getWeather(cityName) {
         })
         .then(function (data) {
             console.log(data);
-            // var today= new Date();
             var lat = data.coord.lat
             var lon = data.coord.lon
             var searchData = JSON.parse(localStorage.getItem("location")) || []
             searchData.push(cityName);
             localStorage.setItem('location', JSON.stringify(searchData))
-            // var forcast = `<div class="city">${cityName}</div>
-            // <div class="day">Date ${today}</div>
-            // <div><img src='https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png'></div>
-            // <div class="temp">Temp:  ${data.main.temp}&#176;F </div>
-            // <div class="wind">Wind:  ${data.wind.speed} MPH</div>
-            // <div class="humidity">Humidity:  ${data.main.humidity}%</div>`
-            // document.getElementById('currentDay').innerHTML=forcast;
             useWeather(lat, lon, cityName);
-            // getUV(lat, lon);
         })
 };
 
@@ -99,9 +87,9 @@ function useWeather(lat, lon, cityName) {
             <div class="humidity">Humidity:  ${daily[0].humidity}%</div>
             <div id="UV" class="uvIndex">UV Index:  ${UVin}</div>`
 
-
-
             document.getElementById('currentDay').innerHTML = forcast;
+
+
             for (let i = 1; i < 6; i++) {
                 var dt = new Date(data.daily[i].dt * 1000);
                 fiveDay += `<div class="weather-day">
@@ -113,7 +101,6 @@ function useWeather(lat, lon, cityName) {
               </div>`
             }
             document.getElementById('weatherId').innerHTML = fiveDay;
-            // getUV(UVin);
             UVcheck(UVin);
         })
 
@@ -137,17 +124,3 @@ function UVcheck(UVin) {
     };
 
 }
-
-// function getUV(lat, lon, UVin) {
-//     var url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${APIkey}`
-//     console.log(url);
-//     fetch(url)
-//     .then(function (response) {
-//         return response.json();
-//     })
-//     .then(function (data) {
-//         console.log(data);
-//         var uv = `<div class="uvIndex">UV Index: ${UVin}%</div>`
-//         document.getElementById('UV').innerHTML = uv;
-// })
-// };
