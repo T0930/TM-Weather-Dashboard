@@ -61,12 +61,9 @@ function getWeather(cityName) {
             // var today= new Date();
             var lat = data.coord.lat
             var lon = data.coord.lon
-<<<<<<< HEAD
             var searchData = JSON.parse(localStorage.getItem("location")) || []
             searchData.push(cityName);
             localStorage.setItem('location', JSON.stringify(searchData))
-=======
->>>>>>> c04e6c0a199d3f0d209af96438b29b72e118eb9c
             // var forcast = `<div class="city">${cityName}</div>
             // <div class="day">Date ${today}</div>
             // <div><img src='https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png'></div>
@@ -100,11 +97,7 @@ function useWeather(lat, lon, cityName) {
             <div class="temp">Temp:  ${daily[0].temp.max}&#176;F </div>
             <div class="wind">Wind:  ${daily[0].wind_speed} MPH</div>
             <div class="humidity">Humidity:  ${daily[0].humidity}%</div>
-<<<<<<< HEAD
             <div id="UV" class="uvIndex">UV Index:  ${UVin}</div>`
-=======
-            <div class="uvIndex">UV Index:  ${UVin}</div>`
->>>>>>> c04e6c0a199d3f0d209af96438b29b72e118eb9c
 
 
 
@@ -128,7 +121,6 @@ function useWeather(lat, lon, cityName) {
 
 function UVcheck(UVin) {
     console.log(UVin);
-<<<<<<< HEAD
     var change = document.getElementById('UV');
     if (UVin > "6") {
 
@@ -142,21 +134,6 @@ function UVcheck(UVin) {
         
         console.log('UV Index Good')
         change.classList.add('uvIndexGood');
-=======
-    // var change = document.getElementById('UV');
-    if (UVin > "6") {
-        // $('#UV').addClass('uvIndexBad');
-        console.log('UV Index Severe')
-        // change.classList.add('uvIndexBad');
-    } else if (UVin > "2" && UVin < "6") {
-        // $('#UV').addClass('uvIndexOk');
-        console.log('UV Index Moderate')
-        // change.classList.add('uvIndexOk');
-    } else {
-        // $('#UV').addClass('uvIndexGood');
-        console.log('UV Index Good')
-        // change.classList.add('uvIndexGood');
->>>>>>> c04e6c0a199d3f0d209af96438b29b72e118eb9c
     };
 
 }
