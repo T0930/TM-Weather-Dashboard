@@ -11,7 +11,7 @@
 * API used in project https://openweathermap.org/api
 
 # Screen Shot:  
-![Preview](Will Update)
+![Preview](https://github.com/T0930/TM-Weather-Dashboard/blob/main/images/TM-Weather-App.png?raw=true)
 
 # Deployed Website:
 [TM-Weather-Dashboard](https://t0930.github.io/TM-Weather-Dashboard/)
