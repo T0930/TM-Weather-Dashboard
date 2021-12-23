@@ -4,7 +4,7 @@
 function displaySearch(){
 var storageOutput = document.getElementById('lsOutput');
 var searchData = JSON.parse(localStorage.getItem("location")) || []
-var htext = `<h3>Previous Search</h3><select name="city" id="city">`
+var htext = `<h6>Search History</h6><select name="city" id="city">`
 
 for (let i = 0; i < searchData.length; i++) {
     htext += `<option value="${searchData[i]}">${searchData[i]}</option>`
@@ -79,7 +79,7 @@ function useWeather(lat, lon, cityName) {
             var daily = data.daily
             var UVin = data.daily[0].uvi
             var fiveDay = '<h2>5 Day Forcast</h2>'
-            var forcast = `<div class="city">${cityName}</div>
+            var forcast = `<h2 class="city">${cityName}</h2>
             <div class="day">Date ${today}</div>
             <div><img src='https://openweathermap.org/img/wn/${daily[0].weather[0].icon}@2x.png'></div>
             <div class="temp">Temp:  ${daily[0].temp.max}&#176;F </div>
