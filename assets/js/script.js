@@ -1,4 +1,11 @@
+rBtn = document.getElementById('rButton');
 
+
+
+rBtn.addEventListener("click", function () {
+    localStorage.clear();
+    location.reload();
+});
 
 
 function displaySearch(){
@@ -82,7 +89,7 @@ function useWeather(lat, lon, cityName) {
             var forcast = `<h2 class="city">${cityName}</h2>
             <div class="day">Date ${today}</div>
             <div><img src='https://openweathermap.org/img/wn/${daily[0].weather[0].icon}@2x.png'></div>
-            <div class="temp">Temp:  ${daily[0].temp.max}&#176;F </div>
+            <div class="temp">Temp (High):  ${daily[0].temp.max}&#176;F </div>
             <div class="wind">Wind:  ${daily[0].wind_speed} MPH</div>
             <div class="humidity">Humidity:  ${daily[0].humidity}%</div>
             <div id="UV" class="uvIndex">UV Index:  ${UVin}</div>`
@@ -95,7 +102,7 @@ function useWeather(lat, lon, cityName) {
                 fiveDay += `<div class="weather-day">
                 <div class="day">${dt.toDateString()}</div>
                 <div> <img src='https://openweathermap.org/img/wn/${daily[i].weather[0].icon}@2x.png'></div>
-                <div class="temp">Temp:  ${daily[i].temp.max}&#176;F</div>
+                <div class="temp">Temp (High):  ${daily[i].temp.max}&#176;F</div>
                 <div class="wind">Wind:  ${daily[i].wind_speed} MPH</div>
                 <div class="humidity">Humidity:  ${daily[i].humidity}%</div>
               </div>`

@@ -81,3 +81,9 @@ h2 {
     border-radius: 10px;
     background: darkblue
 }
+
+.resetButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
