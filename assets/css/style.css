@@ -22,10 +22,6 @@ h2 {
 }
 
 .weather-today {
-    /* display: flex;
-    flex-direction: row; */
-    /* align-items: center;
-    justify-content: center; */
     margin: 0 10px;
     border: 1px solid #eee;
     padding: 8px;
@@ -41,16 +37,13 @@ h2 {
 }
 
 .weatherClass{
-    /* background: rgba(24,24,27,0.8); */
     padding: 25px;
-    /* position: fixed; */
     bottom: 0;
     display: flex;
     color: white;
     width: 100%;
     align-items: center;
     justify-content: center;
-    /* overflow-y: hidden; */
 }
 
 .uvIndexGood {
