@@ -85,7 +85,7 @@ function useWeather(lat, lon, cityName) {
             var today = new Date();
             var daily = data.daily
             var UVin = data.daily[0].uvi
-            var fiveDay = '<h2>5 Day Forcast</h2>'
+            var fiveDay = '<h2>5 Day Forecast</h2>'
             var forcast = `<h2 class="city">${cityName}</h2>
             <div class="day">Date ${today}</div>
             <div><img src='https://openweathermap.org/img/wn/${daily[0].weather[0].icon}@2x.png'></div>
